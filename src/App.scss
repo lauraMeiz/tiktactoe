@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+.square-container {
+  width: 300px;
+  margin: 0 calc(50% - 150px);
+}
+
+// .table {
+//   display: grid;
+//   width: 200px;
+//   height: 200px;
+//   margin: 0 calc(50% - 100px);
+//   // border: 2px solid rgb(66, 66, 161);
+//   background-color: #d3cee8;
+//   grid-template-areas:
+//     "1 2 3 "
+//     "4 5 6"
+//     "7 8 9";
+// }
+
+.square {
+  border: 1px solid #999;
+  float: left;
+  font-size: 40px;
+  height: 80px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 80px;
+}
