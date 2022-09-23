@@ -1,16 +1,23 @@
 import React, { useState } from "react";
+import checkWinner from "../Common/checkWinner";
 import LittleSquare from "./LittleSquare";
 
 export default function Table({ value }) {
   const [steps, setSteps] = React.useState(Array(9).fill(null));
   const [xChoice, setXchoice] = useState(true);
+  const winner = checkWinner(steps);
 
   const click = (i) => {
     setXchoice(!xChoice);
-
+    const stepsCopy = [...steps];
+    if (winner || stepsCopy[i]) return;
     steps[i] = xChoice ? "X" : "O";
     setSteps(steps);
-    console.log(steps[i]);
+    console.log(stepsCopy, "---", steps);
+  };
+  console.log(winner);
+  const reset = () => {
+    setSteps(Array(9).fill(null));
   };
 
   return (
@@ -27,10 +34,12 @@ export default function Table({ value }) {
             ></LittleSquare>
           ))}
         </div>
-        {/* <div className="button">
-          <button>Computer</button>
-          <button>your tout</button>
-        </div> */}
+
+        <div className="button">
+          <button onClick={reset}>Reset</button>
+          {/* <button onClick={computer}>Computer</button> */}
+        </div>
+        <div> Winner is : {winner}</div>
       </div>
     </>
   );
