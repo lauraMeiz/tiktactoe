@@ -5,9 +5,9 @@ import Table from "./Components/Table";
 function App() {
   return (
     <div className="App">
-      {/* <Square></Square> */}
-      {/* one={skaiArray} iksas={iksas} */}
-      <Table> </Table>
+      <div className="square-container">
+        <Table> </Table>
+      </div>
     </div>
   );
 }
