@@ -39,6 +39,16 @@ export default function Table({ value }) {
     setSteps(Array(9).fill(null));
   };
 
+  const displayTurn = () => {
+    if (xChoice) {
+      return "CPU's turn";
+      //console.log("pirmas");
+    } else {
+      return "Your turn";
+      //console.log("antras");
+    }
+  };
+  displayTurn();
   return (
     <>
       <div className="table-row">
@@ -61,7 +71,14 @@ export default function Table({ value }) {
       </div>
 
       <div className="winner-row">
-        <div> Winner is {winner}</div>
+        {
+          <div>
+            {" "}
+            {winner
+              ? "Winner is" + winner
+              : "Next Player: " + (xChoice ? "⚔️" : "💣")}
+          </div>
+        }
       </div>
       <div className="winner-history-row">
         {" "}
